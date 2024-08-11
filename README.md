@@ -7,7 +7,7 @@ Alien Invasion is a Python game project developed using the Pygame library. This
 
 Just clone this repository with: 
 ```
-git clone https://github.com/Maxnick911/AlienInvasion
+git clone https://github.com/Maxnick911/alien_invasion
 ```
 Then start game with:
 ```
