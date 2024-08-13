@@ -29,10 +29,8 @@ class AlienInvasion:
 
         self.play_button = Button(self, "Play")
 
-        # Додайте атрибут для контролю видимості корабля
         self.ship_visible = False
 
-        # Переконайтеся, що прибульці очищені на початку
         self.aliens.empty()
 
     def run_game(self):
@@ -73,20 +71,15 @@ class AlienInvasion:
         self.stats.reset_stats()
         self.stats.game_active = True
 
-        # Оновити відображення рахунку
-        self.sb.prep_score()  # Оновлює відображення поточного рахунку
-        self.sb.prep_high_score()  # Оновлює відображення рекордного рахунку
+        self.sb.prep_score()
+        self.sb.prep_high_score()
 
-        # Очищення прибульців і куль
         self.aliens.empty()
         self.bullets.empty()
 
-        # Створення нової флотилії прибульців
         self._create_fleet()
-        # Встановлення позиції корабля
         self.ship.center_ship()
 
-        # Тепер корабель видимий
         self.ship_visible = True
 
         pygame.mouse.set_visible(False)
@@ -188,10 +181,9 @@ class AlienInvasion:
             pygame.mouse.set_visible(True)
             self.ship_visible = False
             
-            # Скидання поточного рахунку при поразці
             self.stats.score = 0
-            self.sb.prep_score()  # Оновлює відображення поточного рахунку
-            self.sb.check_high_score()  # Перевіряє, чи є новий рекорд
+            self.sb.prep_score()
+            self.sb.check_high_score()
 
     def _check_fleet_edges(self):
         for alien in self.aliens.sprites():
@@ -223,7 +215,7 @@ class AlienInvasion:
         if self.stats.game_active:
             self.aliens.draw(self.screen)
             self.sb.show_score()
-            self.health.show_health()  # Відображення кількості життів
+            self.health.show_health()
         else:
             self.play_button.draw_button()
 
