@@ -6,7 +6,6 @@ class GameStats:
         self.reset_stats()
         self.game_active = False
 
-        # Завантаження рекорду з файлу
         self.high_score = self._load_high_score()
 
     def reset_stats(self):
